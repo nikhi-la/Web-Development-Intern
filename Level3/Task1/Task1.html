@@ -1,0 +1,142 @@
+<html>
+    <head>
+        <title>Gallery</title>
+        <style>
+            body{
+                background-color: beige;
+            }
+            .container{
+                background-color: rgba(108, 117, 173, 0.372);
+                
+                margin-bottom: 10px;
+                padding-top: 10px;
+                padding-bottom: 30px;
+                align-items: center;
+            }
+           
+            h1{
+                color: brown;
+                text-align: center;
+            }
+            .slide{
+                width:650;
+                height:400;
+                position: relative;
+                margin: auto; 
+            }
+            .myslides{
+                display: none;
+            }
+           
+            .fade {
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+            @keyframes fade {
+                from {opacity: .4} 
+                to {opacity: 1}
+            }
+            .img2 {
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 5px;
+                width: 150px;
+            }
+            .img2:hover {
+                box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+            }
+            a{
+                word-spacing: 5px;
+                text-decoration: none;
+            }
+
+            .thumbnail{
+                scroll-behavior: auto;
+                padding-top: 2%;
+                padding-bottom: 2%;
+                margin-top: 2%;
+                margin-bottom: 2%;
+                margin-left: 10%;
+                margin-right: 10%;
+                border-radius: 2%;
+                text-align: center;
+                background-color: rgba(255, 255, 255, 0.422);
+            }
+            .footer{
+                color: rgb(46, 31, 61);
+                font-size: 200%;
+                font-weight: bolder;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Birds Gallery</h1>
+            <div class="slide ">
+                <div class="myslides fade">
+                    <img src="image1.jpg" width="650" height="400" style='border-radius: 5%;'>
+                </div>
+                <div class="myslides fade">
+                    <img src="image2.jpg" width="650" height="400" style='border-radius: 5%;'>
+                </div>
+                <div class="myslides fade">
+                    <img src="image3.jpg" width="650" height="400" style='border-radius: 5%;'>
+                </div>
+        
+            </div>
+        
+        <div class="thumbnail" >
+            
+            <marquee direction="right" scrollamount="12"><h2 style="color:rgb(150, 76, 22)">Thumbnail Images</h2></marquee><br>
+            <a  href="image4.jpg" >
+                <img class='img2' src="image4.jpg" alt="Forest" style="width:200px;height:150px">
+            </a>
+            <a  href="image5.jpg">
+                <img class='img2' src="image5.jpg" alt="Forest" style="width:200px;height:150px">
+            </a>
+            <a  href="image6.jpg" >
+                <img class='img2' src="image6.jpg" alt="Forest" style="width:200px;">
+            </a>
+            <a  href="image7.jpg">
+                <img class='img2' src="image7.jpg" alt="Forest" style="width:200px;">
+            </a>
+            <a  href="image8.jpg" >
+                <img class='img2' src="image8.jpg" alt="Forest" style="width:200px;">
+            </a>
+            <a  href="image9.jpg">
+                <img class='img2' src="image9.jpg" alt="Forest" style="width:200px;">
+            </a>
+            <a  href="image10.jpg">
+                <img class='img2' src="image10.jpg" alt="Forest" style="width:200px;">
+            </a>
+            <a  href="image11.jpg">
+                <img class='img2' src="image11.jpg" alt="Forest" style="width:200px;">
+            </a>
+            <a  href="image12.jpg">
+                <img class='img2' src="image12.jpg" alt="Forest" style="width:200px;">
+            </a>
+        </div>
+        <div class="footer">Thank You</div>
+    </div>
+    </body>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+          let i;
+          let slides = document.getElementsByClassName("myslides");
+          
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}    
+          
+          slides[slideIndex-1].style.display = "block";  
+          setTimeout(showSlides, 2000); 
+        }
+        </script>
+    </html>
+

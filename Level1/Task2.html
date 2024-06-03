@@ -1,0 +1,130 @@
+<html>
+    <script type="text/javascript">
+        function greetingdisplay()
+        {
+            var current=new Date();
+            var time=current.getHours();
+            if (time<12)
+                var message='Good Morning !';
+            else if(time<18)
+                var message='Good Afternoon !';
+            else
+                var message='Good Evening !';
+            alert("Welcome "+message);
+        }
+        function getColor()
+        {
+            var colorbutton=document.getElementById("colorbutton");
+            var colors="0123456789ABCDEF";
+            var hash="#";
+            for (var i=0;i<6;i++)
+            {
+                hash+=colors[Math.floor(Math.random()*16)];
+            }
+            colorbutton.style.background=hash;        
+        }
+        function add(){
+            var num1=parseInt(document.getElementById("num1").value);
+            var num2=parseInt(document.getElementById("num2").value);
+            var result=num1+num2;
+            result=result.toString();
+            document.getElementById("hurray").innerHTML="Hurray...&#128525";
+            document.getElementById("result").innerHTML="Sum is "+result;
+            
+        }
+    </script>
+    <style>
+        body{
+            background-color: rgb(234, 234, 162);
+        }
+        h1{
+            color:rgb(63, 22, 101)
+    
+        }
+        #colorbutton{
+            width: 10%;
+            height: 10%;
+            background-color: #3498db;
+            border-radius: 30%;
+            font-size: 90%;
+            color: rgb(151, 25, 90);
+            border-width: 0.2cm;
+            border-color:rgb(151, 25, 90); ;
+        }
+        .table{
+            width:20cm;
+            height:11cm;
+            background-color:#119740;
+            padding-top: 1%;
+            box-sizing: border-box;
+            border: 10px solid #12642e;
+            border-radius: 10%;
+        }
+        input[type='text']{
+            height:0.8cm;
+            background-color: #79de9c;
+            font-weight: bold;
+        }
+        #result{
+            height:1.8cm;
+            width:4cm;
+            box-sizing: border-box;
+            padding: 3%;
+            background-color: #8d79de;
+            font-weight: bold;
+            color: #932417;
+            font-size: 130%;
+        }
+        #result:hover{
+            height:2.8cm;
+            width:6cm;
+            box-sizing: border-box;
+            padding: 6%;
+            background-color: #8d79de;
+            font-weight: bold;
+            color: #932417;
+            font-size: 130%;
+        }
+        input[type='text']:hover{
+            height:0.8cm;
+            background-color: #81b693;
+        }
+        input[type='submit']{
+            height:0.8cm;
+            width:2cm;
+            font-weight: bold;
+            background-color: #12642e;
+        }
+        input[type='submit']:hover{
+            height:0.8cm;
+            width:2cm;
+            color:#041a0c;
+            font-weight: bold;
+            background-color: #2f7446;
+        }
+        #res{
+            color: #5a655e;
+        }
+        #hurray{
+            font-size:xx-large;
+            color:#440c2d;
+            font-weight: bold;
+        }
+    </style>
+    <body onload="greetingdisplay()">
+        <center>
+        <br>
+        <h1>Click the button to wonder..!</h1>
+        <button id="colorbutton" onclick="getColor()">Click</button>
+        <br><br><br><br><br>
+        <div class="table">
+            <h1>Find the sum</h1>
+            <input type="text" id="num1" placeholder="Enter Number 1">
+            <input type="text" id="num2" placeholder="Enter Number 2"><br><br>
+            <input type="submit" id="add" value="Add" onclick="add()"><br><br>
+            <div id="hurray"></div><br>
+            <div id="result"><span id='res'>Find sum</span></div>
+        
+        </center>
+    </body>
+</html>
